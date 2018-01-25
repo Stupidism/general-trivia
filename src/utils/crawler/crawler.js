@@ -10,7 +10,7 @@ var path = require('path')
 , fs = require('fs')
 , charsetParser = require('charset-parser')
 , Bottleneck = require('bottleneckp')
-, seenreq = require('seenreq')
+, seenreq = require('./seenreq')
 , iconvLite = require('iconv-lite')
 , typeis = require('type-is').is;
 
