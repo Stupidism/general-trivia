@@ -1,4 +1,4 @@
-const Crawler = require("crawler");
+import Crawler from './crawler/crawler';
 
 const crawler = new Crawler({
   maxConnections : 10,

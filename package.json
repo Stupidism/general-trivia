@@ -2,8 +2,10 @@
   "name": "general-trivia",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://stupidism.github.io/general-trivia",
   "dependencies": {
     "antd": "^3.1.4",
+    "cheerio": "^1.0.0-rc.2",
     "crawler": "^1.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -13,8 +15,10 @@
     "tesseract.ts": "^1.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build -- --verbose",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -22,6 +26,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
+    "gh-pages": "^1.1.0",
     "react-app-rewire-less": "^2.1.0",
     "react-app-rewired": "^1.4.0"
   }
