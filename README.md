@@ -1,3 +1,38 @@
+# General
+> 将军 <= General <= 大体 <= dati <= 答题
+
+## Quick Start
+
+
+## Background
+There're many online trivia game live shows like HQ Trivia in China. We'd like to find a proper way to give players enough info to choose the right choice when neither the players nor our program could understand the question.
+I had many thoughts like container, fake client, voice recognition and natural semantic analysis.
+Finally now I start with AR and search engine, which is the simplest and crudest way I could ever come up with.
+The biggest difficulty is all the thing must be done in 10 seconds, even less considering network latency and human reaction speed.
+
+## How it works
+### Recognize
+Firstly, players shoot the screen of trivia apps and `General` would recognize the question and its answers (Q & A). There's no doubt image recognition is the quickest and precisest way. Most people are using keyboard input or voice recognition by hand
+
+### Search
+Secondly, we search Q & A. Possible optimizations are:
+
+1. Analyse key words
+2. Search by different combinations
+3. Search with different search engines
+
+### Evaluate
+Thirdly, we evaluate the relevance between different answers and the question. Possible indices are:
+
+1. Number of results
+2. Number of occurrences of the answer in key word's wiki page.
+3. Number of occurrences of the answer in all the links of questions's first page results.
+
+### Visualize
+Finally, we display the indices for players on the screen, so they would know more info to lock or exclude an answer.
+
+----
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
