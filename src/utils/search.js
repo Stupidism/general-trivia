@@ -13,7 +13,7 @@ function paramsToUrl(params) {
 
 const searchKeywords = (keywords) => new Promise((resolve, reject) => {
   crawler.queue({
-    uri: `http://www.baidu.com/s?${paramsToUrl({ wd: keywords.join(' ') })}`,
+    uri: `https://www.baidu.com:443/s?${paramsToUrl({ wd: keywords.join(' ') })}`,
     callback: function (error, page, done) {
       if(error){
         resolve();
