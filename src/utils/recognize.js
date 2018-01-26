@@ -7,13 +7,17 @@ export default (url, onProgress) => {
     })
       .progress(onProgress)
       .then(function (result) {
-        const statementLines = result.lines.slice(0, -3);
-        const choiceLines = result.lines.slice(-3);
+        if (result.lines.length <= 3) {
+          resolve();
+        } else {
+          const statementLines = result.lines.slice(0, -3);
+          const choiceLines = result.lines.slice(-3);
 
-        resolve({
-          statement: statementLines.map(({ text }) => text).join(),
-          choices: choiceLines.map(({ text }) => text),
-        });
+          resolve({
+            statement: statementLines.map(({ text }) => text).join(),
+            choices: choiceLines.map(({ text }) => text),
+          });
+        }
       })
   });
 };

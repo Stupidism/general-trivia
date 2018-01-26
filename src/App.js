@@ -30,8 +30,12 @@ class App extends Component {
     this.startAt = Date.now();
     const image = url ? url : this.webcam.getScreenshot();
     this.setState({ image });
+
+    if (!image) return;
     const question = await recognize(image, this.handleProgressChange);
     this.setState({ question });
+
+    if (!question) return;
     const pages = await search(question);
     this.setState({ pages, timeCost: (Date.now() - this.startAt) / 1000 });
   };
@@ -42,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <button onClick={this.start}>开始</button>
+          <button onClick={() => this.start()}>开始</button>
           <button onClick={() => this.start(exampleImg)}>测试</button>
         </div>
         <Webcam
